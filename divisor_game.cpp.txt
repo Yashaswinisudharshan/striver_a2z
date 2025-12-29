@@ -1,0 +1,7 @@
+class Solution {
+public:
+    bool divisorGame(int n) {
+        //here it is supposed to follow dp however this is the optimal code
+        return n%2==0;
+    }
+};
