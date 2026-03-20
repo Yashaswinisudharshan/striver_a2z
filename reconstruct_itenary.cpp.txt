@@ -1,0 +1,23 @@
+class Solution {
+public:
+    unordered_map<string, multiset<string>> adj;
+    vector<string> result;
+
+    void dfs(string src) {
+        while (!adj[src].empty()) {
+            string next = *adj[src].begin();
+            adj[src].erase(adj[src].begin());
+            dfs(next);
+        }
+        result.push_back(src); // postorder
+    }
+
+    vector<string> findItinerary(vector<vector<string>>& tickets) {
+        for (auto &t : tickets) {
+            adj[t[0]].insert(t[1]);
+        }
+        dfs("JFK");
+        reverse(result.begin(), result.end());
+        return result;
+    }
+};
