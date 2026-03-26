@@ -21,3 +21,7 @@ public:
         return result;
     }
 };
+we do not shrink a interval while doing stuff we just include intervals while working thats how we work 
+result.back()[1]=max or something like this 
+sort(intervals.begin(),intervals.end())
+result.back()[1] this firstly takes the first thingy of the thingy and then accesses the second thingy of the backmost one 
